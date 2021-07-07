@@ -94,7 +94,9 @@ history=model.fit(x_train,y_train,epochs=5,batch_size=50)
 #######################
 
 #predict & test
-
+print('testing...')
+test_loss,test_acc=model.evaluate(x_test,y_test)
+print('test acc:',test_acc)
 
 
 
