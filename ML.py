@@ -9,7 +9,8 @@ import numpy as np
 import os
 import cv2
 from sklearn.model_selection import train_test_split
-from tensorflow.keras.applications import VGG16
+#from tensorflow.keras.applications import VGG16
+from tensorflow.keras.applications import inception_v3
 
 #####################
 #     first part    #
@@ -59,12 +60,26 @@ y_test=to_categorical(y_test)
 #####################
 
 #build the model
+'''
+#VGG16
 vgg16=VGG16(include_top=False,weights='imagenet',input_shape=(150,150,3))
 vgg16.trainable=False
 model=tf.keras.Sequential()
 model.add(vgg16)
 model.add(Flatten())
 model.add(Dense(512,activation='relu',input_dim=4*4*512))
+model.add(Dense(128,activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(2,activation='sigmoid'))
+model.summary()
+'''
+#google inception_v3
+inv3=inception_v3.InceptionV3(include_top=False,weights='imagenet',input_shape=(150,150,3))
+inv3.trainable=False
+model=tf.keras.Sequential()
+model.add(inv3)
+model.add(Flatten())
+model.add(Dense(512,activation='relu',input_dim=3*3*2048))
 model.add(Dense(128,activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(2,activation='sigmoid'))
