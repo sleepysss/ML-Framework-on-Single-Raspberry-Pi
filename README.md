@@ -13,7 +13,7 @@ dog:https://drive.google.com/drive/folders/1Luk8R1_fH9Q3-YDtMVn-6G6dfDxbBS7g?usp
 	
  @step2 \
 for ML.py \
-server端執行ML.py,dataset為剛剛存的圖片,model採用VGG16的遷移式學習
+server端執行ML.py,dataset為剛剛存的圖片,model可自行選擇採用VGG16/google inceptionV3的遷移式學習
 
 註:\
 (1)請自行更改程式中讀取圖片位置
