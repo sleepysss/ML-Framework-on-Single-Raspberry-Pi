@@ -1,5 +1,5 @@
 兩個端點Device1和Device2 \
-#Device1是負責蒐集圖片並傳給Device2和使用Device2傳回的model來做預測
+#Device1是負責蒐集圖片並傳給Device2和使用Device2傳回的model來做預測 \
 #Device2則是負責訓練模型和把訓練好的模型提供給Device1
 
 1.client.py:Device1執行,把圖片給server \
