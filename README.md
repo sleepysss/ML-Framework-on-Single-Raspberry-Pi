@@ -1,5 +1,7 @@
 # ML-Framework-on-Single-Raspberry-Pi
-#新本的見readme.md \
+#新版的見readme.md,此為舊版 \
+\
+\
  @step1\
 for client.py &server.py \
 client寄圖片給server(執行兩次,一次寄dog的,一次寄cat的),server接收圖片並把它存起來
