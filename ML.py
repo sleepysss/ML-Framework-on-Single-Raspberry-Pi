@@ -9,6 +9,7 @@ import cv2
 from sklearn.model_selection import train_test_split
 #from tensorflow.keras.applications import VGG16
 from tensorflow.keras.applications import inception_v3
+from tensorflow.keras.models import load_model
 
 #####################
 #     first part    #
@@ -58,7 +59,7 @@ y_test=to_categorical(y_test)
 #     third part    #
 #####################
 
-#build the model
+#build the model if model does not exist
 '''
 vgg16=VGG16(include_top=False,weights='imagenet',input_shape=(150,150,3))
 vgg16.trainable=False
@@ -82,6 +83,9 @@ model.add(Dropout(0.5))
 model.add(Dense(2,activation='sigmoid'))
 model.summary()
 
+'''
+#if model already exist then load the model
+model=load_model('//home//pi//pythonpython//file_1.h5')
 
 model.compile(optimizer='rmsprop',loss='binary_crossentropy',metrics=['acc'])
 #train model
