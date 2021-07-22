@@ -86,6 +86,7 @@ model.summary()
 '''
 #if model already exist then load the model
 model=load_model('//home//pi//pythonpython//file_1.h5')
+'''
 
 model.compile(optimizer='rmsprop',loss='binary_crossentropy',metrics=['acc'])
 #train model
